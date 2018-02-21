@@ -7,7 +7,7 @@ function createTtyWrite(stream = process.stdout, options = {}) {
   const input = new Readable();
   input.resume = input.pause = () => {};
   const rl = readline.createInterface(
-    Object.assign({}, options, {
+    Object.assign({ prompt: '' }, options, {
       input,
       output: stream
     })
